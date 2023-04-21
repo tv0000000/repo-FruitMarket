@@ -26,10 +26,10 @@ function mostrarProductos(productos) {
     div.classList.add("col-xl-3", "col-md-6");
     div.innerHTML =
       `<div class="card cardProductos">
-                    <img src= ${producto.img} alt= ${producto.nombre}>
+                    <img class="img-fluid" src= ${producto.img} alt= ${producto.nombre}>
                     <div class="card-body">
                     <h2 class="cardTitle">${producto.nombre}</h2>
-                    <p class="cardText">$${producto.precio} </p></div>
+                    <p class="cardText">$${producto.precio}</p></div>
                     <button class="btn btn-dark buttonCard" id = "boton${producto.id}">Añadir al Carrito</button>
                     </div>`
 
@@ -47,7 +47,7 @@ const agregar = (id, productos) => {
   // const enCarrito = carrito.some((producto) => producto.id === id)
   if (enCarrito) {
     enCarrito.cantidad++;
-    console.log(enCarrito);
+    // console.log(enCarrito);
   } else {
     const producto = productos.find(producto => producto.id === id);
     carrito.push(producto);

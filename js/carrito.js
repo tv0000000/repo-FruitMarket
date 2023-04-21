@@ -14,6 +14,7 @@ const renderCarrito = () => {
         <h3>Carrito</h3>
         <i class="fa-regular fa-circle-xmark modalButton" id="buttonClose"></i>
         `
+    numeroCarrito();
     modal.appendChild(modalHeader);
 
     // BOTON CIERRA MODAL
@@ -27,31 +28,32 @@ const renderCarrito = () => {
         const carritoContent = document.createElement("div");
         carritoContent.className = "carritoContenido"
         carritoContent.innerHTML =
-            `
+            `	
+        
+    <div>
         <img class"imgCarrito" src= ${producto.img} alt= ${producto.nombre}>
+    </div>
+    
+    <div>
         <h3>${producto.nombre}</h3>
-        <p class="carritoText">Cantidad: ${producto.cantidad}</p>
-        <button class="btn-dark botonS" id ="botonResta${producto.id}"> - </button>
-        <button class=" btn-dark botonS" id ="botonSuma${producto.id}"> + </button>
-        <p class="carritoText">Precio unitario: $${producto.precio}</p>
+        
+        <div>
+            <p class="carritoText">Cantidad: ${producto.cantidad}</p>        
+            <button class="btn-dark botonS" id ="botonResta${producto.id}"><i class="fa-solid fa-minus restar-cantidad"></i> </button>
+            <button class=" btn-dark botonS" id ="botonSuma${producto.id}"><i class="fa-solid fa-plus sumar-cantidad"></i> </button>
+        </div> 
 
-        <p class="carritoText">Total: $ ${producto.cantidad * producto.precio}</p>
-        <i class="fa-regular fa-trash-can botonEliminar" id ="botonEliminar${producto.id}"></i>
+        <p class="carritoText">Precio unitario: $${producto.precio}</p>    
+        <p class="carritoText">Total: $${producto.cantidad * producto.precio}</p>
+        <span>Eliminar<i class="fa-regular fa-trash-can botonEliminar" id ="botonEliminar${producto.id}"></i></span>
+    
+    </div>
         `
         modal.appendChild(carritoContent);
 
         const botonEliminar = document.getElementById(`botonEliminar${producto.id}`);
         botonEliminar.addEventListener("click", () => {
             eliminarProducto(producto.id);
-            // Toastify({
-            //     text: `Se eliminó unidad de ${producto.nombre}`,
-            //     position: 'left',
-            //     gravity: 'bottom',
-            //     duration: 5000,
-            //     style: {
-            //     background: "linear-gradient(to right, #f17b5d, #f02f2f)",
-            //     }
-            // }).showToast();
         });
 
         const botonSuma = document.getElementById(`botonSuma${producto.id}`);
@@ -67,55 +69,7 @@ const renderCarrito = () => {
 
     });
 
-    const costo = () => {
-        let total = carrito.reduce((acumulador, productos) => acumulador + (productos.cantidad * productos.precio), 0);
-        console.log(total);
-
-        const muestroTotal = document.createElement("div");
-        muestroTotal.className = "muestroTotal";
-        muestroTotal.innerHTML = `
-    <p>Total de la compra: $${total}</p>
-    <button class="botonVaciar" id="botonVaciar">Vaciar carrito</button>
-    `;
-        modal.appendChild(muestroTotal);
-        // localStorage.setItem("carrito", JSON.stringify(carrito));
-    }
-
     costo();
-
-    const eliminamos = document.getElementById("botonVaciar")
-        eliminamos.addEventListener("click", () => {
-          if (carrito.length > 0) {
-            Swal.fire({
-              title: "¿Estas seguro?",
-              icon: "warning",
-              confirmButtonText: "Aceptar",
-              showCancelButton: true,
-              cancelButtonText: "Cancelar"
-            }).then((result) => {
-              if (result.isConfirmed) {
-                eliminamosCarrito();
-                //localStorage.clear();
-                Swal.fire({
-                  title: "Se vacio el carrito",
-                  icon: "success",
-                  confirmButtonText: "Aceptar"
-                })
-              }
-            })
-          } else {
-            Swal.fire({
-              title: "Tu carrito esta vacio",
-              icon: "warning",
-              confirmButtonText: "Aceptar",
-            })
-          }
-        })
-
-
-
-
-
 }
 
 // EVENTO RENDER CARRITO
@@ -160,10 +114,44 @@ const restaProducto = (id) => {
     }
 }
 
+// ELIMINAMOS CARRITO
 const eliminamosCarrito = () => {
     carrito.forEach(producto => {
-    producto.cantidad = 1;
+        producto.cantidad = 1;
     })
     carrito = [];
     renderCarrito();
+}
+
+// COSTO
+const costo = () => {
+    let total = carrito.reduce((acumulador, productos) => acumulador + (productos.cantidad * productos.precio), 0);
+    console.log(total);
+
+    const muestroTotal = document.createElement("div");
+    muestroTotal.className = "muestroTotal";
+    muestroTotal.innerHTML = `
+<p>Total de la compra: $${total}</p>
+<button class="botonVaciar" id="botonVaciar">Vaciar carrito</button>
+`;
+    modal.appendChild(muestroTotal);
+    // localStorage.setItem("carrito", JSON.stringify(carrito));
+    const eliminamos = document.getElementById("botonVaciar")
+    eliminamos.addEventListener("click", () => {
+        if (carrito.length > 0) {
+            eliminamosCarrito();
+            numeroCarrito();
+            Swal.fire({
+                title: "Se vacio el carrito",
+                icon: "success",
+                confirmButtonText: "Aceptar",
+            })
+        } else {
+            Swal.fire({
+                title: "Tu carrito esta vacio",
+                icon: "warning",
+                confirmButtonText: "Aceptar",
+            })
+        }
+    })
 }
