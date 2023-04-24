@@ -8,7 +8,6 @@
  }
 
  /***** NAV ******/
-
  .estiloNav {
     display: flex;
     justify-content: space-between;
@@ -86,8 +85,7 @@ margin-left: 14px;
     font-size: 12px;
 }
 
-/* MODAL */
-
+/****** MODAL ******/
 .modalHeader { 
     display: flex;
     justify-content: center;
@@ -181,8 +179,61 @@ margin-left: 14px;
     padding: 4px;
 }
 
+.carritoCompra {
+    display: flex;
+    align-items: center;
+}
 
-/* MEDIAS */
+.formu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 14px;
+    margin: 15px;
+}
+
+.inpu {
+    width: 16rem;
+    text-align: center;
+}
+
+.subForm {
+    color: white;
+}
+
+label {
+    color: #fff;
+    margin: 0.3rem;
+}
+
+.botonForm { 
+    border-radius: .3rem;
+    color: white;
+    border: 1px solid rgb(209,213,219);
+    background-color: black;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 3px, 0px, 2px, 0px;
+    padding: 1px;
+    margin: 7px;
+    width: 16rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***** MEDIAS ******/
 @media (min-width: 0px) and (max-width: 580px) {
 
     .estiloNav {
@@ -214,7 +265,7 @@ margin-left: 14px;
         }
 
     .modalHeader { 
-        background-color: rgb(77, 76, 76);;
+        background-color: rgb(77, 76, 76);
     }
 
     .modalHeader h3 {
@@ -236,13 +287,13 @@ margin-left: 14px;
         padding: 4px;
         background-color: rgba(0, 0, 0, 0.937);
         font-weight: 600;
+        font-size: 1.3rem;
         }
 
     .carritoContenido img {
-        width: 4rem;
-        height: 4rem;
+        width: 12rem;
+        height: 12rem;
         border-radius: 1.5rem;
-        margin-right: 88px;
         }
 
     .modalContainer {

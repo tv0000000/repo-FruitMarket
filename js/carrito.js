@@ -70,11 +70,12 @@ const renderCarrito = () => {
     });
 
     costo();
+    finalizar();
 }
 
 // EVENTO RENDER CARRITO
 verCarrito.addEventListener("click", () => {
-    renderCarrito()
+    renderCarrito();
 })
 
 // ******* ELIMINAR PRODUCTO *******
