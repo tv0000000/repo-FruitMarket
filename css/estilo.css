@@ -1,12 +1,6 @@
  /***** FONT ******/
  @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
-
  /***** NAV ******/
  .estiloNav {
     display: flex;
@@ -96,18 +90,21 @@ margin-left: 14px;
 
 .modalHeader h3 {
     justify-self: start;
+    font-size: 2rem;
 }
 
 
 .modalButton {
-    margin-top: 2px;
+    margin: 2px;
     padding: 10px;
     cursor: pointer;
+    font-weight: 500;
+    font-size: 1.5rem;
     color: rgb(218, 7, 7);
 }
 
 .modalContainer {
-    max-height: 88vh;
+    max-height: 85vh;
     width: 40vw;
     margin: 0% 30%;
     color: #fff;
@@ -119,7 +116,6 @@ margin-left: 14px;
     overflow: auto;
     z-index: 9;
     top: 12vh;
-    scrollbar-color: none;
     opacity: 0.9;
     border-radius: 20px;
 }
@@ -145,8 +141,9 @@ margin-left: 14px;
 }
 
 .botonS {
-    width: 22px;
-    height: 22px;
+    /* width: 23px;
+    height: 23px; */
+    padding: 2px;
     border-radius: 50%;
     font-size: 12px;
     font-weight: 600;
@@ -166,7 +163,8 @@ margin-left: 14px;
     font-size: 20px;
     padding: 20px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 7px;
+    border-top: 2px solid #fff;
 }
 
 .botonVaciar {
@@ -177,21 +175,33 @@ margin-left: 14px;
     background-color: #fff;
     border-radius: 10px;
     padding: 4px;
+    
 }
 
+/* CARRITO COMPRA */
 .carritoCompra {
     display: flex;
-    align-items: center;
+  }
+
+.carritoCompra p {
+    margin: 0;
+    padding: 10px;
 }
 
+.carritoCompra h3 {
+    margin: 0px;
+}
+
+/* FORMULARIO COMPRA */
 .formu {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border: 1px solid white;
+    border: 2px solid white;
     border-radius: 14px;
     margin: 15px;
+    padding: 5px;
 }
 
 .inpu {
@@ -220,18 +230,6 @@ label {
     margin: 7px;
     width: 16rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /***** MEDIAS ******/
 @media (min-width: 0px) and (max-width: 580px) {
@@ -276,8 +274,13 @@ label {
         margin: 9px;
         padding: 0 4px;
         font-weight: 600;
+        font-size: 1rem;
     }
 
+    .modalContainer {
+        max-height: 90vh;
+        width: 100vw;
+    }
 
     .carritoContenido {
         display: flex;
@@ -297,10 +300,43 @@ label {
         }
 
     .modalContainer {
-        max-height: 88vh;
+        max-height: 85vh;
         width: 60vw;
         margin: 0% 20%;
         }
+}
+
+
+.muestroTotal {
+    padding: 4px;
+}
+
+.carritoCompra h3 {
+    font-size: 20px;
+    margin: 6px;
+}
+
+.formu {
+    margin: 0px;
+    padding: 5px;
+    background-color: black;
+}
+
+.inpu {
+    width: 12rem;
+    border-radius: 4px;
+}
+
+label {
+    color: #fff;
+    margin: 0.3rem;
+}
+
+.botonForm { 
+    padding: 1px;
+    margin: 7px;
+    width: 12rem;
+    background-color: #f90202e0;;
 }
 
 

@@ -20,15 +20,29 @@ const renderCompra = () => {
         carritoCompra.className = "carritoCompra"
         carritoCompra.innerHTML =
             `
-        <div>	
+        <div>    
         <h3>${producto.nombre}</h3>
-        <p class="carritoText">Cantidad: ${producto.cantidad}</p>
-        </div>       
+        </div>
+        <div>
+        <p>Cantidad: ${producto.cantidad}</p>
+        </div>
+
         `
         modal.appendChild(carritoCompra);
     })
 }
 
+const costoFinal = () => {
+    let total = carrito.reduce((acumulador, productos) => acumulador + (productos.cantidad * productos.precio), 0);
+    console.log(total);
+
+    const muestroTotal = document.createElement("div");
+    muestroTotal.className = "muestroTotal";
+    muestroTotal.innerHTML = `
+<p>Total de la compra: $${total}</p>
+`;
+    modal.appendChild(muestroTotal);
+}
 
 const finalizar = () => {
     const finalizar = document.createElement("div")
@@ -40,7 +54,7 @@ const finalizar = () => {
     const botonFinalizar = document.getElementById("botonFinalizar");
     botonFinalizar.addEventListener("click", () => {
         renderCompra();
-        costo();
+        costoFinal();
         dirEnvio();
     });
 };
