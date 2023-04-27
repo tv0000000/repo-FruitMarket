@@ -3,359 +3,344 @@
 
  /***** NAV ******/
  .estiloNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.061);
-}
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: rgba(0, 0, 0, 0.061);
+ }
 
-.estiloNav h1 {
-font-size: 1.4rem;
-margin-left: 14px;
-}
+ .estiloNav h1 {
+     font-size: 1.4rem;
+     margin-left: 14px;
+ }
 
  .botonCarrito {
-    border: none;
-    font-size: 1.4rem;
-    padding: 10px 20px;
-}
+     border: none;
+     font-size: 1.4rem;
+     padding: 10px 20px;
+ }
 
-.contadorCarrito {
-    font-weight: 600;
-    font-size: 15px;
-}
+ .contadorCarrito {
+     font-weight: 600;
+     font-size: 15px;
+ }
 
-/* TITULO */
-.fruit {
-    background-image: url(../img/background.jpg);
-    background-size: contain;
-    height: 400px;
-    margin-bottom: 30px;
-}
+ /* TITULO */
+ .fruit {
+     background-image: url(../img/background.jpg);
+     background-size: contain;
+     height: 400px;
+     margin-bottom: 30px;
+ }
 
-.tituloWeb {
-    font-family: 'Ubuntu', sans-serif;
-    color: #fff;
-    text-align: center;
-    padding-top: 25px;
-    font-size: 2.5rem;
-    margin-top: 5px;
-    margin: auto;
-}
+ .tituloWeb {
+     font-family: 'Ubuntu', sans-serif;
+     color: #fff;
+     text-align: center;
+     padding-top: 25px;
+     font-size: 2.5rem;
+     margin-top: 5px;
+     margin: auto;
+ }
 
-/****** CARDS ******/
-.cardProductos {
-    margin: 5px;
-    text-align: center;
-    transition: .3s;
-}
+ /****** CARDS ******/
+ .cardProductos {
+     margin: 5px;
+     text-align: center;
+     transition: .3s;
+ }
 
-.cardProductos:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px 0 rgb(0, 0, 0.2);
-}
+ .cardProductos:hover {
+     transform: scale(1.02);
+     box-shadow: 0 4px 8px 0 rgb(0, 0, 0.2);
+ }
 
-.cardBody { 
-    box-shadow: 0 4px 8px 0 rgb(0, 0, 0.2);
-    padding: 3px;
-    text-align: center;
-}
+ .cardBody {
+     box-shadow: 0 4px 8px 0 rgb(0, 0, 0.2);
+     padding: 3px;
+     text-align: center;
+ }
 
-.cardTitle {
-    font-size: 30px;
-    padding: 5px;
-}
+ .cardTitle {
+     font-size: 30px;
+     padding: 5px;
+ }
 
-.cardText {
-    font-size: 15px;
-    padding-bottom: 20px;
-    color: rgb(80, 79, 79);
-}
+ .cardText {
+     font-size: 15px;
+     padding-bottom: 20px;
+     color: rgb(80, 79, 79);
+ }
 
-.buttonCard {
-    border: none;
-    border-radius: 2px;
-    padding: 7px;
-    font-size: 12px;
-}
+ .buttonCard {
+     border: none;
+     border-radius: 2px;
+     padding: 7px;
+     font-size: 12px;
+ }
 
-/****** MODAL ******/
-.modalHeader { 
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    width: 100%;
-}
+ /****** MODAL ******/
+ .modalHeader {
+     display: flex;
+     justify-content: center;
+     background-color: black;
+     color: white;
+     width: 100%;
+ }
 
-.modalHeader h3 {
-    justify-self: start;
-    font-size: 2rem;
-}
+ .modalHeader h3 {
+     justify-self: start;
+     font-size: 2rem;
+ }
 
 
-.modalButton {
-    margin: 2px;
-    padding: 10px;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 1.5rem;
-    color: rgb(218, 7, 7);
-}
+ .modalButton {
+     margin: 2px;
+     padding: 10px;
+     cursor: pointer;
+     font-weight: 500;
+     font-size: 1.5rem;
+     color: rgb(218, 7, 7);
+ }
 
-.modalContainer {
-    max-height: 85vh;
-    width: 40vw;
-    margin: 0% 30%;
-    color: #fff;
-    background-color: rgb(77, 76, 76);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    overflow: auto;
-    z-index: 9;
-    top: 12vh;
-    opacity: 0.9;
-    border-radius: 20px;
-}
+ .modalContainer {
+     max-height: 85vh;
+     width: 40vw;
+     margin: 0% 30%;
+     color: #fff;
+     background-color: rgb(77, 76, 76);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     position: fixed;
+     overflow: auto;
+     z-index: 9;
+     top: 12vh;
+     opacity: 0.9;
+     border-radius: 20px;
+ }
 
-.modalContainer::-webkit-scrollbar {
-    display: none;
-}
+ .modalContainer::-webkit-scrollbar {
+     display: none;
+ }
 
-.carritoContenido {
-    border-radius: 5%;
-    display: flex;
-    border-top: 2px solid white;
-    border-bottom: 2px solid white;
-    margin: 4px;
+ .carritoContenido {
+     border-radius: 5%;
+     display: flex;
+     border-top: 2px solid white;
+     border-bottom: 2px solid white;
+     margin: 4px;
 
-}
+ }
 
-.carritoContenido img {
-    margin-right: 1.2rem;
-    width: 6.25rem;
-    height: 6.25rem;
-    border-radius: 1.5rem;
-}
+ .carritoContenido img {
+     margin-right: 1.2rem;
+     width: 6.25rem;
+     height: 6.25rem;
+     border-radius: 1.5rem;
+ }
 
-.botonS {
-    /* width: 23px;
+ .botonS {
+     /* width: 23px;
     height: 23px; */
-    padding: 2px;
-    border-radius: 50%;
-    font-size: 12px;
-    font-weight: 600;
-    background-color: #ffffffcb
-}
+     padding: 2px;
+     border-radius: 50%;
+     font-size: 12px;
+     font-weight: 600;
+     background-color: #ffffffcb
+ }
 
-.botonEliminar {
-   cursor: pointer;
-   margin: 4px 7px ;
-}
+ .botonEliminar {
+     cursor: pointer;
+     margin: 4px 7px;
+ }
 
-.carritoText {
-   margin-bottom: 1px;
-}
+ .carritoText {
+     margin-bottom: 1px;
+ }
 
-.muestroTotal {
-    font-size: 20px;
-    padding: 20px;
-    text-align: center;
-    padding-top: 7px;
-    border-top: 2px solid #fff;
-}
+ .muestroTotal {
+     font-size: 20px;
+     padding: 20px;
+     text-align: center;
+     padding-top: 7px;
+     border-top: 2px solid #fff;
+ }
 
-.botonVaciar {
-    font-size: 15px;
-    font-weight: 600;
-    color: #f90202e0;
-    border: 1px solid black;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 4px;
-    
-}
+ .botonVaciar {
+     font-size: 15px;
+     font-weight: 600;
+     color: #f90202e0;
+     border: 1px solid black;
+     background-color: #fff;
+     border-radius: 10px;
+     padding: 4px;
 
-/* CARRITO COMPRA */
-.carritoCompra {
-    display: flex;
-  }
+ }
 
-.carritoCompra p {
-    margin: 0;
-    padding: 10px;
-}
+ /* CARRITO COMPRA */
+ .carritoCompra {
+     display: flex;
+ }
 
-.carritoCompra h3 {
-    margin: 0px;
-}
+ .carritoCompra p {
+     margin: 0;
+     padding: 10px;
+ }
 
-/* FORMULARIO COMPRA */
-.formu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 2px solid white;
-    border-radius: 14px;
-    margin: 15px;
-    padding: 5px;
-}
+ .carritoCompra h3 {
+     margin: 0px;
+ }
 
-.inpu {
-    width: 16rem;
-    text-align: center;
-}
+ /* FORMULARIO COMPRA */
+ .formu {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+     align-items: center;
+     border: 2px solid white;
+     border-radius: 14px;
+     margin: 15px;
+     padding: 5px;
+ }
 
-.subForm {
-    color: white;
-}
+ .inpu {
+     width: 16rem;
+     text-align: center;
+ }
 
-label {
-    color: #fff;
-    margin: 0.3rem;
-}
+ .subForm {
+     color: white;
+ }
 
-.botonForm { 
-    border-radius: .3rem;
-    color: white;
-    border: 1px solid rgb(209,213,219);
-    background-color: black;
-    font-size: 14px;
-    font-weight: 600;
-    margin: 3px, 0px, 2px, 0px;
-    padding: 1px;
-    margin: 7px;
-    width: 16rem;
-}
+ label {
+     color: #fff;
+     margin: 0.3rem;
+ }
 
-/***** MEDIAS ******/
-@media (min-width: 0px) and (max-width: 580px) {
+ .botonForm {
+     border-radius: .3rem;
+     color: white;
+     border: 1px solid rgb(209, 213, 219);
+     background-color: black;
+     font-size: 14px;
+     font-weight: 600;
+     margin: 3px, 0px, 2px, 0px;
+     padding: 1px;
+     margin: 7px;
+     width: 16rem;
+ }
 
-    .estiloNav {
-        height: 15vh;
+ /***** MEDIAS ******/
+ @media (min-width: 0px) and (max-width: 580px) {
+
+     .estiloNav {
+         height: 15vh;
+     }
+
+
+     .estiloNav h1 {
+         font-size: 3rem;
+         margin-left: 14px;
+     }
+
+     .botonCarrito {
+         border: none;
+         font-size: 1.7rem;
+         padding: 10px 20px;
+     }
+
+     .fruit {
+         background-image: url(../img/backgroundResponsive..jpg);
+         background-size: cover;
+         padding: 14%;
+     }
+
+     .tituloWeb {
+         font-size: 2.8rem;
+         font-weight: 600;
+
+     }
+
+     .modalHeader h3 {
+         font-size: 1.5rem;
+     }
+
+     .modalButton {
+         margin: 9px;
+         padding: 0 4px;
+         font-weight: 600;
+         font-size: 1rem;
+     }
+
+     .modalContainer {
+         max-height: 85vh;
+         width: fit-content;
+     }
+
+     .carritoContenido {
+         width: fit-content;
+         padding: 4px;
+         background-color: rgba(0, 0, 0, 0.937);
+         font-weight: 600;
+         font-size: 1.3rem;
+
+     }
+
+     .carritoContenido img {
+         display: none;
+     }
+
+     .muestroTotal {
+         padding: 4px;
+     }
+
     }
 
+    @media (min-width: 0px) and (max-width: 748px) {
+     .formu {
+         margin: 0px;
+         padding: 5px;
+         background-color: black;
+     }
 
-    .estiloNav h1 {
-        font-size: 3rem;
-        margin-left: 14px;
-        }
-        
-    .botonCarrito {
-            border: none;
-            font-size: 1.7rem;
-            padding: 10px 20px;
-        }
+     .inpu {
+         width: 12rem;
+         border-radius: 4px;
+     }
 
-    .fruit {
-        background-image: url(../img/backgroundResponsive..jpg);
-        background-size: cover;
-        padding: 14%;
-        }
-    
-    .tituloWeb {
-        font-size: 2.8rem;
-        font-weight: 600;
-           
-        }
+     label {
+         color: #fff;
+         margin: 0.3rem;
+     }
 
-    .modalHeader { 
-        background-color: rgb(77, 76, 76);
-    }
+     .botonForm {
+         padding: 1px;
+         margin: 7px;
+         width: 12rem;
+         background-color: #f90202e0;
+         ;
+     }
+ }
 
-    .modalHeader h3 {
-        font-size: 1.5rem;
-    }
-
-    .modalButton {
-        margin: 9px;
-        padding: 0 4px;
-        font-weight: 600;
-        font-size: 1rem;
-    }
-
+ @media (min-width: 0px) and (max-width: 412px) {
     .modalContainer {
-        max-height: 90vh;
-        width: 100vw;
-    }
-
-    .carritoContenido {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100vw;
-        padding: 4px;
-        background-color: rgba(0, 0, 0, 0.937);
-        font-weight: 600;
-        font-size: 1.3rem;
-        }
-
-    .carritoContenido img {
-        width: 12rem;
-        height: 12rem;
-        border-radius: 1.5rem;
-        }
-
-    .modalContainer {
-        max-height: 85vh;
-        width: 60vw;
         margin: 0% 20%;
-        }
-}
+    }
+ }
 
 
-.muestroTotal {
-    padding: 4px;
-}
-
-.carritoCompra h3 {
-    font-size: 20px;
-    margin: 6px;
-}
-
-.formu {
-    margin: 0px;
-    padding: 5px;
-    background-color: black;
-}
-
-.inpu {
-    width: 12rem;
-    border-radius: 4px;
-}
-
-label {
-    color: #fff;
-    margin: 0.3rem;
-}
-
-.botonForm { 
-    padding: 1px;
-    margin: 7px;
-    width: 12rem;
-    background-color: #f90202e0;;
-}
-
-
-
-
-
-
-
-/* NO ENTIENDO PORQUE ASI NO FUNCIONA SI ESTOY HACIENDO LO MISMO QUE EN EL JS */
-/* .ocultar {
+ /* NO ENTIENDO PORQUE ASI NO FUNCIONA SI ESTOY HACIENDO LO MISMO QUE EN EL JS */
+ /* .ocultar {
     display: none;
 }
 
 .mostrar {
     display: flex;
-} */ 
+} */
 
 
-/* MI PROYECTO */
+ /* MI PROYECTO */
 
  /****** CARDS ******/
  /* .cardProductos {
@@ -479,4 +464,3 @@ label {
      margin: 7px;
      width: 16rem;
  } */
-
