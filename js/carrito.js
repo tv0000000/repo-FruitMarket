@@ -1,5 +1,6 @@
 const verCarrito = document.getElementById("botonCarrito");
 // esto nodo lo cree en el NAV en main main.js. Ahora evidentemente lee primero el NAV de main.js y despues lee esto porque sino no debería funcionar. Si lo ponia en main.js pero por encima del NAV no funcionaba. Entiendo que es porque puse en el htm primero mail.js y después carrito.js porque sino no funcionaría. 
+const modalMensaje = document.getElementById("modalMensaje");
 
 
 // console.log("funciona y no se repite?")
@@ -29,7 +30,6 @@ const renderCarrito = () => {
         carritoContent.className = "carritoContenido"
         carritoContent.innerHTML =
             `	
-        
     <div>
         <img class"imgCarrito" src= ${producto.img} alt= ${producto.nombre}>
     </div>

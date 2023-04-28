@@ -12,7 +12,7 @@ const renderCompra = () => {
 
     const buttonClose = document.getElementById("buttonClose");
     buttonClose.addEventListener("click", () => {
-        modal.style.display = "none"; 
+        modal.style.display = "none";
     })
 
     carrito.forEach(producto => {
@@ -77,5 +77,46 @@ const dirEnvio = () => {
       </div>`
 
     modal.appendChild(form);
+
+    const enviar = document.getElementById("enviarCompra");
+    const nombre = document.getElementById("nombre");
+    const direccion = document.getElementById("direccion");
+
+    enviar.addEventListener("click", () => {
+        modal.style.display = "none"
+        if (carrito.length > 0 && nombre.value != "" && direccion.value != "") {
+            Swal.fire({
+                title: "Tu pedido esta en camino",
+                icon: "success",
+                confirmButtonText: "Aceptar",
+            })
+        } else {
+            Swal.fire({
+                title: "No hay productos en el carrito o no completaste nombre/dirección",
+                icon: "warning",
+                confirmButtonText: "Aceptar",
+            })
+        }
+    });
+
+    const cancelar = document.getElementById("cancelCompra");
+    cancelar.addEventListener("click", () => {
+        Swal.fire({
+            title: "¿Estas seguro?",
+            icon: "warning",
+            confirmButtonText: "Aceptar",
+            showCancelButton: true,
+            cancelButtonText: "Cancelar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                eliminamosCarrito();
+                Swal.fire({
+                    title: "Compra cancelada",
+                    icon: "success",
+                    confirmButtonText: "Aceptar"
+                })
+            }
+        })
+    })
 };
 
