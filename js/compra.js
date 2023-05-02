@@ -20,13 +20,8 @@ const renderCompra = () => {
         carritoCompra.className = "carritoCompra"
         carritoCompra.innerHTML =
             `
-        <div>    
-        <h3>${producto.nombre}</h3>
-        </div>
-        <div>
-        <p>Cantidad: ${producto.cantidad}</p>
-        </div>
-
+            <h3>${producto.nombre}</h3>
+            <p>Cantidad: ${producto.cantidad}</p>
         `
         modal.appendChild(carritoCompra);
     })
@@ -45,18 +40,41 @@ const costoFinal = () => {
 }
 
 const finalizar = () => {
-    const finalizar = document.createElement("div")
+    const finalizar = document.createElement("div");
     finalizar.innerHTML = `
+<div class="contenedorVaciar">    
+<button class="botonVaciar" id="botonVaciar">Vaciar carrito</button>
 <button class="botonVaciar" id="botonFinalizar">Finalizar compra</button>
+<div>
 `
     modal.appendChild(finalizar);
 
     const botonFinalizar = document.getElementById("botonFinalizar");
+    const eliminamos = document.getElementById("botonVaciar")
+
     botonFinalizar.addEventListener("click", () => {
         renderCompra();
         costoFinal();
         dirEnvio();
     });
+    
+    eliminamos.addEventListener("click", () => {
+        if (carrito.length > 0) {
+            eliminamosCarrito();
+            numeroCarrito();
+            Swal.fire({
+                title: "Se vacio el carrito",
+                icon: "success",
+                confirmButtonText: "Aceptar",
+            })
+        } else {
+            Swal.fire({
+                title: "Tu carrito esta vacio",
+                icon: "warning",
+                confirmButtonText: "Aceptar",
+            })
+        }
+    })
 };
 
 //******* FORMULARIO *******
