@@ -151,12 +151,12 @@
  }
 
  .botonS {
-     border-radius: 15%;
-     height: 2.6rem;
+     border-radius: 35%;
+     height: 2.5rem;
  }
 
  .cantidad {
-     margin: 7px;
+     margin: 3px;
      font-size: 1.5rem;
  }
 
@@ -255,9 +255,11 @@
 
  /***** MEDIAS ******/
 
- @media (min-width: 0px) and (max-width: 412px) {
+ @media (min-width: 0px) and (max-width: 425px) {
+   
     .modalContainer {
-        margin: 0% 20%;
+        margin: 0% 10%;
+        width: 80vw;
     }
 
     .contenedorVaciar {
@@ -268,7 +270,7 @@
     }
    }
 
- @media (min-width: 0px) and (max-width: 580px) {
+ @media (min-width: 426px) and (max-width: 580px) {
 
      .estiloNav {
          height: 15vh;
@@ -310,8 +312,9 @@
      }
 
      .modalContainer {
-         max-height: 85vh;
          width: fit-content;
+         margin: 0 16%;
+        
      }
 
      .carritoContenido {
@@ -323,7 +326,13 @@
      }
  }
 
- @media (min-width: 0px) and (max-width: 748px) {
+ @media (min-width: 580px) and (max-width: 1920px) {
+
+    .modalContainer {
+        margin: 0% 10%;
+        width: 80vw;
+    }
+
      .formu {
          margin: 0px;
          padding: 5px;
@@ -348,12 +357,3 @@
          ;
      }
  }
-
-     /* NO ENTIENDO PORQUE ASI NO FUNCIONA SI ESTOY HACIENDO LO MISMO QUE EN EL JS */
-     /* .ocultar {
-    display: none;
-}
-
-.mostrar {
-    display: flex;
-} */

@@ -1,25 +1,27 @@
 const verCarrito = document.getElementById("botonCarrito");
-const modalMensaje = document.getElementById("modalMensaje");
+
+const renderHeader = ()=> {
+modal.innerHTML = "";
+modal.style.display = "flex";
+const modalHeader = document.createElement("div");
+modalHeader.className = "modalHeader";
+modalHeader.innerHTML = `
+    <h3>Carrito</h3>
+    <i class="fa-regular fa-circle-xmark modalButton" id="buttonClose"></i>
+    `
+numeroCarrito();
+modal.appendChild(modalHeader);
+
+// BOTON CIERRA MODAL
+const buttonClose = document.getElementById("buttonClose");
+buttonClose.addEventListener("click", () => {
+    modal.style.display = "none"; 
+ })
+}
+
+
 const renderCarrito = () => {
-    modal.innerHTML = "";
-    modal.style.display = "flex";
-    const modalHeader = document.createElement("div");
-    modalHeader.className = "modalHeader";
-    modalHeader.innerHTML = `
-        <h3>Carrito</h3>
-        <i class="fa-regular fa-circle-xmark modalButton" id="buttonClose"></i>
-        `
-    numeroCarrito();
-    modal.appendChild(modalHeader);
-
-
-
-    // BOTON CIERRA MODAL
-    const buttonClose = document.getElementById("buttonClose");
-    buttonClose.addEventListener("click", () => {
-        modal.style.display = "none";
-        // modal.className =  "ocultar"; entiendo que no funciona asi porque con style  solo le estoy agregando ese estilo indivicual y no estoy modificando el resto de propiedades que le di en css. Si le pongo una nueva clase piso la anterior entonces ahí se va todo al demonio. 
-    })
+    renderHeader();
     carrito.forEach(producto => {
         const carritoContent = document.createElement("div");
         carritoContent.className = "carritoContenido"
@@ -27,17 +29,18 @@ const renderCarrito = () => {
             `	
         <img class"imgCarrito" src= ${producto.img} alt= ${producto.nombre}>
         <h3>${producto.nombre}</h3>            
-        
         <div class="contenedorBotonesC">
-        <button class="btn-dark botonS" id ="botonResta${producto.id}"><i class="fa-solid fa-minus restar-cantidad"></i></button>
-        <p class="cantidad">${producto.cantidad}</p>
-        <button class=" btn-dark botonS" id ="botonSuma${producto.id}"><i class="fa-solid fa-plus sumar-cantidad"></i></button>
+            <button class="btn-dark botonS" id ="botonResta${producto.id}"><i class="fa-solid fa-minus restar-cantidad"></i></button>
+            <p class="cantidad">${producto.cantidad}</p>
+            <button class=" btn-dark botonS" id ="botonSuma${producto.id}"><i class="fa-solid fa-plus sumar-cantidad"></i></button>
         </div>
+        
         <p class="carritoText">Unidad: $${producto.precio}</p>    
         <p class="carritoText">Total: $${producto.cantidad * producto.precio}</p>
         <span><i class="fa-regular fa-trash-can botonEliminar" id ="botonEliminar${producto.id}"></i></span>
         `
         modal.appendChild(carritoContent);
+        
         const botonEliminar = document.getElementById(`botonEliminar${producto.id}`);
         botonEliminar.addEventListener("click", () => {
             eliminarProducto(producto.id);
@@ -70,7 +73,7 @@ const eliminarProducto = (id) => {
     carrito.splice(indice, 1);
     renderCarrito();
     numeroCarrito();
-    //   localStorage.setItem("carrito", JSON.stringify(carrito))
+    localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
 // ******* SUMAR O RESTAR ******* 
@@ -79,7 +82,7 @@ const sumaProducto = (id) => {
     if (sumaCarrito) {
         sumaCarrito.cantidad++;
         renderCarrito();
-        //     localStorage.setItem("carrito", JSON.stringify(carrito))
+        localStorage.setItem("carrito", JSON.stringify(carrito))
     }
 }
 
@@ -89,9 +92,6 @@ const restaProducto = (id) => {
         if (restaCarrito.cantidad > 1) {
             restaCarrito.cantidad--;
         }
-        // else {
-        //     restaCarrito.cantidad = 0;
-        // }
         renderCarrito();
     }
 }
@@ -108,7 +108,7 @@ const eliminamosCarrito = () => {
 // COSTO
 const costo = () => {
     let total = carrito.reduce((acumulador, productos) => acumulador + (productos.cantidad * productos.precio), 0);
-    console.log(total);
+    // console.log(total);
 
     const muestroTotal = document.createElement("div");
     muestroTotal.className = "muestroTotal";
@@ -116,5 +116,5 @@ const costo = () => {
 <p>Total de la compra: $${total}</p>
 `;
     modal.appendChild(muestroTotal);
-    // localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 }

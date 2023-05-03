@@ -5,6 +5,11 @@ const contadorCarrito = document.getElementById("contadorCarrito");
 
 let carrito = [];
 
+// localStorage
+if (localStorage.getItem("carrito")) {
+  carrito = JSON.parse(localStorage.getItem("carrito"))
+};
+
 // CONTADOR
 const numeroCarrito = () => {
   contadorCarrito.style.display = "inline-block";
@@ -26,12 +31,12 @@ function mostrarProductos(productos) {
     div.classList.add("col-xl-3", "col-md-6");
     div.innerHTML =
       `<div class="card cardProductos">
-                    <img class="img-fluid" src= ${producto.img} alt= ${producto.nombre}>
-                    <div class="card-body">
-                    <h2 class="cardTitle">${producto.nombre}</h2>
-                    <p class="cardText">$${producto.precio}</p></div>
-                    <button class="btn btn-dark buttonCard" id = "boton${producto.id}">Añadir al Carrito</button>
-                    </div>`
+          <img class="img-fluid" src= ${producto.img} alt= ${producto.nombre}>
+          <div class="card-body">
+          <h2 class="cardTitle">${producto.nombre}</h2>
+          <p class="cardText">$${producto.precio}</p></div>
+          <button class="btn btn-dark buttonCard" id = "boton${producto.id}">Añadir al Carrito</button>
+      </div>`
 
     contenedorProductos.appendChild(div);
 
@@ -44,7 +49,6 @@ function mostrarProductos(productos) {
 
 const agregar = (id, productos) => {
   const enCarrito = carrito.find(producto => producto.id === id);
-  // const enCarrito = carrito.some((producto) => producto.id === id)
   if (enCarrito) {
     enCarrito.cantidad++;
     // console.log(enCarrito);
@@ -53,5 +57,5 @@ const agregar = (id, productos) => {
     carrito.push(producto);
   }
   numeroCarrito();
-  // localStorage.setItem("carrito", JSON.stringify(carrito))
+  localStorage.setItem("carrito", JSON.stringify(carrito))
 };
