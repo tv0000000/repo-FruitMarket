@@ -1,11 +1,11 @@
 [
-    {"id":1, "nombre":"Manzanas", "precio":100, "img":"img/manzanas.jpg", "cantidad":1},
+    {"id":1, "nombre":"Manzana", "precio":100, "img":"img/manzanas.jpg", "cantidad":1},
     
-    {"id":2, "nombre":"Naranjas", "precio":100, "img":"img/naranjas.jpg", "cantidad":1},
+    {"id":2, "nombre":"Naranja", "precio":100, "img":"img/naranjas.jpg", "cantidad":1},
     
-    {"id":3, "nombre":"Uvas", "precio":100, "img":"img/uvas.jpg", "cantidad":1},
+    {"id":3, "nombre":"Uva", "precio":100, "img":"img/uvas.jpg", "cantidad":1},
     
-    {"id":4, "nombre":"Frutillas", "precio":100, "img":"img/frutilla.jpg", "cantidad":1},
+    {"id":4, "nombre":"Frutilla", "precio":100, "img":"img/frutilla.jpg", "cantidad":1},
     
     {"id":5, "nombre":"Mandarina", "precio":100, "img":"img/mandarina.jpg", "cantidad":1},
     

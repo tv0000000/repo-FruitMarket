@@ -9,7 +9,6 @@ modalHeader.innerHTML = `
     <h3>Carrito</h3>
     <i class="fa-regular fa-circle-xmark modalButton" id="buttonClose"></i>
     `
-numeroCarrito();
 modal.appendChild(modalHeader);
 
 // BOTON CIERRA MODAL

@@ -13,8 +13,12 @@ if (localStorage.getItem("carrito")) {
 // CONTADOR
 const numeroCarrito = () => {
   contadorCarrito.style.display = "inline-block";
-  contadorCarrito.innerText = carrito.length;
+  const carritoLength = carrito.length
+  localStorage.setItem("carritoLength", JSON.stringify(carritoLength))
+  contadorCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
 };
+
+numeroCarrito();
 
 // PRODUCTOS
 const archivoJson = "json/productos.json";
