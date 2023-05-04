@@ -82,6 +82,8 @@ const dirEnvio = () => {
                 icon: "success",
                 confirmButtonText: "Aceptar",
             })
+        eliminamosCarrito()
+        numeroCarrito()
         } else {
             Swal.fire({
                 title: "No hay productos en el carrito o no completaste nombre/dirección",
@@ -102,6 +104,7 @@ const dirEnvio = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 eliminamosCarrito();
+                numeroCarrito()
                 Swal.fire({
                     title: "Compra cancelada",
                     icon: "success",
@@ -111,4 +114,5 @@ const dirEnvio = () => {
         })
     })
 };
+numeroCarrito()
 
